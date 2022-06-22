@@ -3,11 +3,17 @@
 
   <p class="btn btn-light"><i class="fas fa-plus"></i> <%= link_to "Add", new_restaurant_path %></p>
   <hr>
-  <% @restaurants.each do |restaurant| %>
-    <%= link_to restaurant.name, restaurant_path(restaurant) %>
-    <p><%= restaurant.address %></p>
-    <p><%= restaurant.phone_number %></p>
-    <p><%= restaurant.category %></p>
-    <hr>
-  <% end %>
+  <div class="cards">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card-trip">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+          <p><%= restaurant.address %></p>
+          <p><%= restaurant.phone_number %></p>
+          <p><%= restaurant.category %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
